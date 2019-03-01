@@ -25,7 +25,7 @@ defmodule Issues.CLI do
       -> :help
 
     { _, [ user_name, project_name, display_count ], _ }
-      -> { user_name, project_name, display_count }
+      -> { user_name, project_name, String.to_integer(display_count) }
 
     { _, [ user_name, project_name ], _ }
       -> { user_name, project_name, @default_display_count }
